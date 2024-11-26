@@ -13,4 +13,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :games, only: %i[new create]
+
+  get "games/rejoin", to: "games#rejoin"
+
+  patch "games/:id/play", to: "games#play"
+
+  patch "games/:id/pass", to: "games#pass"
 end
