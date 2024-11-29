@@ -1,0 +1,17 @@
+<div id="board" data-controller="board" data-board-color-value="<%= current_user == @game.white_player ? "white" : "black" %>" data-board-id-value="<%= @game.id %>">
+  <template id="stone-b">
+      <%= image_tag "black.png", class: "stone" %>
+  </template>
+   <template id="stone-w">
+      <%= image_tag "white.png", class: "stone" %>
+  </template>
+
+<%= render "axis_line" %>
+<%= render "cell_line", row: "6" %>
+<%= render "cell_line", row: "5" %>
+<%= render "cell_line", row: "4" %>
+<%= render "cell_line", row: "3" %>
+<%= render "cell_line", row: "2" %>
+<%= render "cell_line", row: "1" %>
+<%= render "axis_line" %>
+</div>

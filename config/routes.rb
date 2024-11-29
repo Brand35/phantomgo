@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :games, only: %i[new create]
+  resources :games, only: %i[new create show]
 
   get "games/rejoin", to: "games#rejoin"
 
