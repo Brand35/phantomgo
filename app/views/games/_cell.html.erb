@@ -1,4 +1,8 @@
-<div class="cell" data-action="click->board#place" data-column="<%= column %>"data-row="<%= row %>" data-intersection="<%= column %><%= row %>">
+<div class="<%= @game.current_player == current_user ? "cell-active" : "cell-inactive" %>"
+     data-action="click->board#place"
+     data-column="<%= column %>"
+     data-row="<%= row %>"
+     data-intersection="<%= column %><%= row %>">
   <div class="line horizontal <%= "left" if column == "A" %> <%= "right" if column == "F" %> " ></div>
   <div class="line vertical <%= "top" if row == "6" %> <%= "bottom" if row == "1" %> "></div>
   <%= render "stone_white" if @game.board_state["#{column}#{row}"] == "white" && current_user == @game.white_player %>
